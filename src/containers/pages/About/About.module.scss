@@ -1,6 +1,5 @@
 @import "../../../sass/abstracts/mixins";
 @import "../../../sass/abstracts/variables";
-@import "../../../sass/bases/animation";
 
 .About {
     max-width: 70rem;
@@ -10,8 +9,7 @@
     text-align: center;
     padding-top: 3rem;
     margin-bottom: 11rem;
-    animation: fadeIn 1s ease;
-    -webkit-animation: fadeIn 1s ease;
+    @include fadeIn;
     &__Figure {
         width: 12rem;
 
@@ -25,7 +23,7 @@
     &__Paragraph {
         font-size: 1.5rem;
 
-        color: rgba($color-black, 0.6);
+        color: $color-muted;
         padding: 0 2rem;
     }
 

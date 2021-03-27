@@ -2,8 +2,8 @@
 .Heading {
     font-size: 3rem;
     margin: 1rem 0;
-    color: rgba($color-black, 0.8);
-    text-transform: uppercase;
+    color: #646464;
+    text-transform: capitalize;
     position: relative;
     &::after {
         content: "";

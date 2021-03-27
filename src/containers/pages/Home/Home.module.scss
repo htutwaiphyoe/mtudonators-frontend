@@ -1,0 +1,54 @@
+@import "../../../sass/abstracts/mixins";
+@import "../../../sass/abstracts/variables";
+
+.Home {
+    width: 100%;
+    @include fadeIn;
+    @include center;
+    flex-direction: column;
+    margin-bottom: 11rem;
+
+    &__Box {
+        width: 100%;
+        @include center;
+        margin-top: 2rem;
+        & div:last-child {
+            margin-left: 5rem;
+            @include responsive(992, 0) {
+                margin-left: 0rem;
+            }
+        }
+        @include responsive(992, 0) {
+            flex-direction: column;
+        }
+    }
+    &__Total {
+        @include center;
+        flex-direction: column;
+
+        &__Amount {
+            font-size: 13rem;
+            line-height: 1;
+            font-weight: 700;
+            font-family: "Libre Franklin", sans-serif;
+            @include responsive(575, 0) {
+                font-size: 11rem;
+            }
+            @include responsive(400, 0) {
+                font-size: 9rem;
+            }
+            color: $color-primary;
+            & span {
+                font-size: 3rem;
+                font-weight: 700;
+                margin-left: -2rem;
+            }
+        }
+
+        &__Label {
+            font-size: 1.4rem;
+            color: $color-muted;
+            text-align: center;
+        }
+    }
+}
