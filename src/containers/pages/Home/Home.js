@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Heading from "../../../components/shared/Heading/Heading";
 import Chart from "../../../components/Chart/Chart";
-import { beautifyDate } from "../../../utils/utils";
 import classes from "./Home.module.scss";
 
 const l = [];
@@ -25,8 +24,8 @@ const charts = {
         {
             labels: l,
             data,
-            label: "Amount",
-            title: "Donations for last 10 days",
+            label: "ငွေပမာဏ",
+            title: "နောက်ဆုံး 10 ရက်အတွင်းကောက်ခံရရှိမှု",
             bg: "#9d0208",
             type: "bar",
         },
@@ -43,8 +42,8 @@ const charts = {
                 "1601000",
                 "2916000",
             ],
-            label: "Amount",
-            title: "Donation per batch & external",
+            label: "‌ငွေပမာဏ",
+            title: "Batch အလိုက်နှင့် ပြင်ပမှ ကောက်ခံရရှိမှု",
             bg: "#9d0208",
             type: "bar",
         },

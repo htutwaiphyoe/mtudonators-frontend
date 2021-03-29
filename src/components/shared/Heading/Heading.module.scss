@@ -2,7 +2,7 @@
 .Heading {
     font-size: 3rem;
     margin: 1rem 0;
-    color: #646464;
+    color: $color-muted;
     text-transform: capitalize;
     position: relative;
     &::after {
