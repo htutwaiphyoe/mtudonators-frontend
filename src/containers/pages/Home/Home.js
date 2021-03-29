@@ -75,30 +75,31 @@ const Home = (props) => {
     return (
         <section className={classes.Home}>
             <div className={classes.Home__Total}>
-                <p>K15,460,162+ ရရှိထားပြီးဖြစ်သည်</p>
-                <span className={classes.Home__Total__Label}>{`As of ${beautifyDate(
-                    new Date()
-                )} since ${beautifyDate(new Date("2021/2/1"))}`}</span>
+                <p className={classes.Home__Total__Heading}>K15,460,162+</p>
+                <span className={classes.Home__Total__Label}>{`ရရှိထားပြီးဖြစ်သည်`}</span>
             </div>
-            <div className={classes.Home__Box}>
-                {charts.bar.map((c, i) => (
-                    <div>
-                        <Chart {...c} key={i} />
-                        <p className={classes.Home__Total__Label}>{c.title}</p>
+            <div className={classes.Home__Container}>
+                <div className={classes.Home__Box}>
+                    <div className={classes.Home__Total}>
+                        <Heading text="Total" />
+                        <div className={classes.Home__Total__Amount}>{percentage}%</div>
+                        <span className={classes.Home__Total__Label}>{"ထောက်ပံ့ပြီးဖြစ်သည်"}</span>
                     </div>
-                ))}
-            </div>
-            <div className={classes.Home__Box}>
-                <div className={classes.Home__Total}>
-                    <Heading text="Balance" />
-                    <div className={classes.Home__Total__Amount}>{percentage}%</div>
-                    <span className={classes.Home__Total__Label}>{`As of ${beautifyDate(
-                        new Date()
-                    )} since ${beautifyDate(new Date("2021/2/1"))}`}</span>
+                    <div>
+                        <Chart {...charts.doughnut} />
+                        <p className={classes.Home__Total__Label}>{charts.doughnut.title}</p>
+                    </div>
                 </div>
-                <div>
-                    <Chart {...charts.doughnut} />
-                    <p className={classes.Home__Total__Label}>{charts.doughnut.title}</p>
+            </div>
+
+            <div className={classes.Home__Container}>
+                <div className={classes.Home__Box}>
+                    {charts.bar.map((c, i) => (
+                        <div key={i}>
+                            <Chart {...c} />
+                            <p className={classes.Home__Total__Label}>{c.title}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
