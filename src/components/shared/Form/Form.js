@@ -16,7 +16,7 @@ const Form = (props) => {
                 />
             ))}
             <Button valid={props.formValid} loading={props.loading}>
-                Send form
+                Send now
             </Button>
         </form>
     );

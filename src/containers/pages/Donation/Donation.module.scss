@@ -2,12 +2,41 @@
 @import "../../../sass/abstracts/variables";
 .Donation {
     width: 100%;
-    @include center;
-    flex-direction: column;
-    padding: 1rem 2rem 2rem;
-    margin-bottom: 11rem;
-    @include fadeIn;
+    padding-top: 2rem;
+    @include responsive(575, 0) {
+        padding-top: 1rem;
+    }
+    padding-bottom: 11rem;
 
+    @include fadeIn;
+    &__PhotoBox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include responsive(991, 0) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include responsive(575, 0) {
+            padding: 0 1rem;
+            gap: 1rem;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        padding: 0 2rem;
+        gap: 2rem;
+        width: 100%;
+        margin: 0 auto;
+        & figure {
+            width: 100%;
+            height: 100%;
+            // background-color: $color-black;
+        }
+        &__Photo {
+            width: 100%;
+            // opacity: 0.8;
+            height: 100%;
+            filter: grayscale(80%);
+            -webkit-filter: grayscale(80%);
+        }
+    }
     &__Container {
         @include center;
         flex-direction: column;

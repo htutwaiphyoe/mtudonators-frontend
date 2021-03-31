@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 
-import Table from "../../../components/Table/Table";
 import Paragraph from "../../../components/shared/Paragraph/Paragraph";
 import Button from "../../../components/shared/Button/Button";
+import Box from "../../../components/shared/Box/Box";
 import classes from "./Donation.module.scss";
 const Donation = (props) => {
     const services = useRef({
@@ -47,32 +47,43 @@ const Donation = (props) => {
         ],
     });
 
-    const donors = useRef([
-        { name: "1st batch ကျောင်းသားဟောင်းများ", batch: "1st", amount: "3,405,000" },
-        { name: "2nd batch ကျောင်းသားဟောင်းများ", batch: "2nd", amount: "1,467,000" },
-        { name: "Final ကျောင်းသားများ", batch: "3rd", amount: "1,883,000" },
-        { name: "5th year ကျောင်းသားများ", batch: "4th", amount: "1,469,200" },
-        { name: "4th year ကျောင်းသားများ", batch: "5th", amount: "1,118,800" },
-        { name: "3rd year ကျောင်းသားများ", batch: "6th", amount: "1,445,612" },
-        { name: "2nd year ကျောင်းသားများ", batch: "7th", amount: "1,222,000" },
-        { name: "1st year ကျောင်းသားများ", batch: "8th", amount: "842,550" },
-        { name: "ပြင်ပအလှူရှင်များ", batch: "N/A", amount: "1,130,000" },
-        { name: "ဂျပန်နှင့်နော်ဝေရောက် MTU ကျောင်းသားများ", batch: "N/A", amount: "1,786,000" },
-    ]);
     useEffect(() => {
         document.title = "Donation | MTU CDM Support";
     }, []);
     return (
         <section className={classes.Donation}>
-            <div className={classes.Donation__Container}>
+            <div className={classes.Donation__PhotoBox}>
+                <figure>
+                    <img
+                        className={classes.Donation__PhotoBox__Photo}
+                        src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.15752-9/167893409_462592904856308_4552469087483898646_n.png?_nc_cat=109&ccb=1-3&_nc_sid=ae9488&_nc_ohc=_4BVAWHYUUkAX_-N4nm&_nc_ht=scontent-hkt1-1.xx&oh=b996c06e9ea33a864b45c124f4e077e0&oe=608A3CE6"
+                        alt=""
+                    />
+                </figure>
+                <figure>
+                    <img
+                        className={classes.Donation__PhotoBox__Photo}
+                        src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.15752-9/156998617_439274337401396_8153648209118197410_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=ae9488&_nc_ohc=0KrP9YnDuNYAX9zbu6m&_nc_ht=scontent-hkt1-1.xx&oh=5da872dcbca35f9f818eced17fdd0056&oe=608B1F44"
+                        alt=""
+                    />
+                </figure>
+                <figure>
+                    <img
+                        className={classes.Donation__PhotoBox__Photo}
+                        src="https://scontent-hkt1-1.xx.fbcdn.net/v/t1.15752-9/158396297_904124143751655_8414086983580476142_n.jpg?_nc_cat=109&ccb=1-3&_nc_sid=ae9488&_nc_ohc=vfl4c5nfgJIAX-EZZOk&_nc_oc=AQn4plSBZqqhSVa2db_6qTRPTCJjFhx2AwCqs0LFZNxQa_fvQ-hvCdDVxZi0s3wtxmw&_nc_ht=scontent-hkt1-1.xx&oh=4b5503c9493e3189920785c24913577c&oe=608AE8AC"
+                        alt=""
+                    />
+                </figure>
+            </div>
+            <Box vertical>
                 <Paragraph>
                     CDM သမားများ ဆက်လက်ရပ်တည်နိုင်ရန်အတွက် ထောက်ပံ့လိုပါက MTU Student's Union ၏ Page
                     Messanger ကနေတစ်ဆင့် ဆက်သွယ်မေးမြန်းလှူဒါန်းနိုင်ပါသည်။
                 </Paragraph>
                 <Button link={true} url="http://m.me/mtustudentunion">
-                    Donate now
+                    Support Now
                 </Button>
-            </div>
+            </Box>
             <Paragraph>
                 အောက်ဖော်ပြပါ service များဖြင့် လှူဒါန်းမှုကို ကောက်ခံလျက်ရှိပါသည်
             </Paragraph>
@@ -105,12 +116,6 @@ const Donation = (props) => {
                         </figure>
                     ))}
                 </div>
-            </div>
-            <div className={classes.Donation__Container}>
-                <Paragraph>
-                    ပါဝင်လှူဒါန်းကြသူ တစ်ဦးချင်းဆီကို CDM Support Team မှ ကျေးဇူးတင်ဂုဏ်ပြုပါသည်။
-                </Paragraph>
-                <Table donors={donors.current} />
             </div>
         </section>
     );

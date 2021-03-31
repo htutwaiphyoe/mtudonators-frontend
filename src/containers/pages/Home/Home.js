@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import Heading from "../../../components/shared/Heading/Heading";
 import Paragraph from "../../../components/shared/Paragraph/Paragraph";
 import Chart from "../../../components/Chart/Chart";
+import Table from "../../../components/Table/Table";
+import Button from "../../../components/shared/Button/Button";
+import Box from "../../../components/shared/Box/Box";
 import classes from "./Home.module.scss";
 
 const l = [];
@@ -57,7 +60,18 @@ const charts = {
         type: "doughnut",
     },
 };
-
+const donors = [
+    { name: "1st batch ကျောင်းသားဟောင်းများ", batch: "1st", amount: "3,405,000" },
+    { name: "2nd batch ကျောင်းသားဟောင်းများ", batch: "2nd", amount: "1,467,000" },
+    { name: "Final ကျောင်းသားများ", batch: "3rd", amount: "1,883,000" },
+    { name: "5th year ကျောင်းသားများ", batch: "4th", amount: "1,469,200" },
+    { name: "4th year ကျောင်းသားများ", batch: "5th", amount: "1,118,800" },
+    { name: "3rd year ကျောင်းသားများ", batch: "6th", amount: "1,445,612" },
+    { name: "2nd year ကျောင်းသားများ", batch: "7th", amount: "1,222,000" },
+    { name: "1st year ကျောင်းသားများ", batch: "8th", amount: "842,550" },
+    { name: "ပြင်ပအလှူရှင်များ", batch: "N/A", amount: "1,130,000" },
+    { name: "ဂျပန်နှင့်နော်ဝေရောက် MTU ကျောင်းသားများ", batch: "N/A", amount: "1,786,000" },
+];
 const Home = (props) => {
     const [percentage, setPercentage] = useState(0);
 
@@ -105,6 +119,21 @@ const Home = (props) => {
                     ))}
                 </div>
             </div>
+            <Box vertical>
+                <Paragraph>
+                    CDM သမားများ ဆက်လက်ရပ်တည်နိုင်ရန်အတွက် ထောက်ပံ့လိုပါက MTU Student's Union ၏ Page
+                    Messanger ကနေတစ်ဆင့် ဆက်သွယ်မေးမြန်းလှူဒါန်းနိုင်ပါသည်။
+                </Paragraph>
+                <Button link={true} url="http://m.me/mtustudentunion">
+                    Support Now
+                </Button>
+            </Box>
+            <Box vertical>
+                <Paragraph>
+                    ပါဝင်လှူဒါန်းကြသူ တစ်ဦးချင်းဆီကို CDM Support Team မှ ကျေးဇူးတင်ဂုဏ်ပြုပါသည်။
+                </Paragraph>
+                <Table donors={donors} />
+            </Box>
         </section>
     );
 };

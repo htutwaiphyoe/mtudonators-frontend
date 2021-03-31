@@ -5,6 +5,7 @@ import Paragraph from "../../../components/shared/Paragraph/Paragraph";
 import Form from "../../../components/shared/Form/Form";
 import firebase from "../../../api/firebase";
 import { checkValidity } from "../../../utils/utils";
+import Button from "../../../components/shared/Button/Button";
 import classes from "./Contact.module.scss";
 const Contact = (props) => {
     const media = useRef([
@@ -100,7 +101,7 @@ const Contact = (props) => {
             message: contactForm.message.value,
         };
         setLoading(true);
-        await firebase.post("/message.json", formData);
+        await firebase.post("message.json", formData);
         setLoading(false);
         const newContactForm = { ...contactForm };
         Object.keys(newContactForm).forEach((key) => {
@@ -128,7 +129,9 @@ const Contact = (props) => {
                         className={classes.Contact__ImageContainer__Image}
                     />
                 </figure>
-
+                <Button link={true} url="http://m.me/mtustudentunion">
+                    Support Now
+                </Button>
                 <Paragraph>
                     CDM ထောက်ပံ့ရေးနှင့်ပတ်သတ်၍ အသေးစိတ်သိရှိလို၍ဖြစ်စေ၊ မေးမြန်းချင်လို၍ဖြစ်စေ MTU
                     CDM Support Team ထံသို့ အောက်ဖော်ပြပါနည်းလမ်းများနှင့် ဆက်သွယ်နိုင်ပါသည်။
@@ -145,6 +148,7 @@ const Contact = (props) => {
                         </li>
                     ))}
                 </ul>
+
                 <Paragraph>
                     Copyright &copy; 2021 | MTU Students' Union <br />
                     Terms & Conditions
