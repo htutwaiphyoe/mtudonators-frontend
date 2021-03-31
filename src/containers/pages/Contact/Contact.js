@@ -1,8 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import icon from "../../../assets/imgs/contact.svg";
 import Paragraph from "../../../components/shared/Paragraph/Paragraph";
 import Form from "../../../components/shared/Form/Form";
+import firebase from "../../../api/firebase";
+import { checkValidity } from "../../../utils/utils";
 import classes from "./Contact.module.scss";
 const Contact = (props) => {
     const media = useRef([
@@ -10,7 +12,7 @@ const Contact = (props) => {
         { url: "http://m.me/mtustudentunion", icon: "facebook-messenger" },
     ]);
 
-    const contactForm = {
+    const [contactForm, setContactForm] = useState({
         name: {
             type: "input",
             config: {
@@ -18,6 +20,13 @@ const Contact = (props) => {
                 placeholder: "Name",
                 required: true,
             },
+            value: "",
+            validations: {
+                required: true,
+                minLength: 3,
+            },
+            valid: false,
+            touch: false,
         },
         email: {
             type: "input",
@@ -26,15 +35,28 @@ const Contact = (props) => {
                 placeholder: "Email",
                 required: true,
             },
+            value: "",
+            validations: {
+                required: true,
+                isEmail: true,
+            },
+            valid: false,
+            touch: false,
         },
         select: {
             type: "select",
             options: [
-                { value: "0", shownValue: "- Select -" },
-                { value: "1", shownValue: "Feedback" },
-                { value: "2", shownValue: "Be a part of us" },
-                { value: "3", shownValue: "Report bugs or errors" },
+                { value: "select", shownValue: "- Select -" },
+                { value: "feedback", shownValue: "Feedback" },
+                { value: "member", shownValue: "Be a part of us" },
+                { value: "Report", shownValue: "Report bugs or errors" },
             ],
+            value: "select",
+            validations: {
+                default: "select",
+            },
+            valid: false,
+            touch: false,
         },
         message: {
             type: "textarea",
@@ -42,7 +64,56 @@ const Contact = (props) => {
                 required: true,
                 placeholder: "Message",
             },
+            value: "",
+            validations: {
+                required: true,
+                minLength: 15,
+            },
+            valid: false,
+            touch: false,
         },
+    });
+
+    const [formValid, setFormValid] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const onChangeHandler = (e, type) => {
+        const newInput = { ...contactForm[type] };
+        newInput.touch = true;
+        newInput.value = e.target.value;
+        newInput.valid = checkValidity(newInput.value, newInput.validations);
+        const updatedContactForm = { ...contactForm };
+        updatedContactForm[type] = newInput;
+        let formValid = true;
+        Object.keys(updatedContactForm).forEach(
+            (el) => (formValid = updatedContactForm[el].valid && formValid)
+        );
+        setContactForm(updatedContactForm);
+        setFormValid(formValid);
+    };
+
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+        const formData = {
+            name: contactForm.name.value,
+            email: contactForm.email.value,
+            type: contactForm.select.value,
+            message: contactForm.message.value,
+        };
+        setLoading(true);
+        await firebase.post("/message.json", formData);
+        setLoading(false);
+        const newContactForm = { ...contactForm };
+        Object.keys(newContactForm).forEach((key) => {
+            const newInput = { ...newContactForm[key] };
+            if (key === "select") {
+                newInput.value = "select";
+            } else {
+                newInput.value = "";
+            }
+            newContactForm[key] = newInput;
+        });
+
+        setContactForm(newContactForm);
     };
     useEffect(() => {
         document.title = "Contact | MTU CDM Support";
@@ -79,7 +150,13 @@ const Contact = (props) => {
                     Terms & Conditions
                 </Paragraph>
             </div>
-            <Form formData={contactForm} />
+            <Form
+                formData={contactForm}
+                onChangeHandler={onChangeHandler}
+                formValid={formValid}
+                onSubmitHandler={onSubmitHandler}
+                loading={loading}
+            />
         </section>
     );
 };

@@ -1,6 +1,10 @@
 import classes from "./Button.module.scss";
 
 const Button = (props) => {
+    const classNames = [classes.Button];
+    if (!props.valid) {
+        classNames.push(classes.Button_Disable);
+    }
     if (props.link) {
         return (
             <a href={props.url} className={classes.Button}>
@@ -8,8 +12,20 @@ const Button = (props) => {
             </a>
         );
     }
+    if (props.loading) {
+        return (
+            <button className={`${classes.Button} ${classes.Button_Disable}`} disabled={true}>
+                Loading...
+            </button>
+        );
+    }
     return (
-        <button type="submit" onClick={props.onClick} className={classes.Button}>
+        <button
+            type="submit"
+            onClick={props.onClick}
+            className={classNames.join(" ")}
+            disabled={!props.valid}
+        >
             {props.children}
         </button>
     );

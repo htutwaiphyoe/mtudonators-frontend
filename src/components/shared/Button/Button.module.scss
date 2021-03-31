@@ -25,4 +25,13 @@
     &:hover {
         color: $color-primary-light;
     }
+
+    &_Disable {
+        background-color: $color-light;
+        cursor: not-allowed;
+        color: $color-foreground;
+        &:hover {
+            color: $color-foreground;
+        }
+    }
 }

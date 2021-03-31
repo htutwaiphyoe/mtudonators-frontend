@@ -1,6 +1,11 @@
 import classes from "./Input.module.scss";
 
 const Input = (props) => {
+    const classNames = [classes.Input];
+
+    if (!props.valid && props.touch) {
+        classNames.push(classes.Input__Invalid);
+    }
     switch (props.type) {
         case "textarea":
             return (
@@ -9,13 +14,21 @@ const Input = (props) => {
                     id=""
                     cols="30"
                     rows="10"
-                    className={classes.Input}
+                    className={classNames.join(" ")}
                     {...props.config}
+                    value={props.value}
+                    onChange={props.onChangeHandler}
                 />
             );
         case "select":
             return (
-                <select name="" id="" className={classes.Input}>
+                <select
+                    name=""
+                    id=""
+                    className={classNames.join(" ")}
+                    value={props.value}
+                    onChange={props.onChangeHandler}
+                >
                     {props.options.map((option, i) => (
                         <option value={option.value} key={i}>
                             {option.shownValue}
@@ -24,7 +37,15 @@ const Input = (props) => {
                 </select>
             );
         default:
-            return <input type="text" className={classes.Input} {...props.config} />;
+            return (
+                <input
+                    type="text"
+                    className={classNames.join(" ")}
+                    {...props.config}
+                    value={props.value}
+                    onChange={props.onChangeHandler}
+                />
+            );
     }
 };
 
