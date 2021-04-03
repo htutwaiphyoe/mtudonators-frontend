@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import Layout from "./Layout/Layout";
 import Home from "./pages/Home/Home";
@@ -16,6 +16,7 @@ const App = () => {
                         <Route path="/about" exact component={About} />
                         <Route path="/donation" exact component={Donation} />
                         <Route path="/contact" exact component={Contact} />
+                        <Redirect to="/"/>
                     </Switch>
                 </Suspense>
             </Layout>

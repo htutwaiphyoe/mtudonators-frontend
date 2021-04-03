@@ -1,25 +1,11 @@
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 
 import Heading from "../../../components/shared/Heading/Heading";
 import Paragraph from "../../../components/shared/Paragraph/Paragraph";
 import Button from "../../../components/shared/Button/Button";
+import * as aboutData from "../../../api/aboutData";
 import classes from "./About.module.scss";
 const About = (props) => {
-    const items = useRef([
-        {
-            icon: "duplicate",
-            text: "CDM ဝန်ထမ်းများကို ထောက်ပံ့ရန်အတွက် MTU ကျောင်းသား/သူများထံမှ အလှူခံခြင်း",
-        },
-        {
-            icon: "share",
-            text: "ရရှိလာသော လှူဒါန်းငွေများကို CDM ဝန်ထမ်းများဆီသို့ ကူညီထောက်ပံ့ပေးခြင်း",
-        },
-        {
-            icon: "bookmarks",
-            text: "ပါဝင်ကူညီလှူဒါန်းသူများကို ကျောင်းသားသမ္မဂ္ဂမှ ဂုဏ်ပြု မှတ်တမ်းတင်ခြင်း",
-        },
-    ]);
-
     useEffect(() => {
         document.title = "About | MTU CDM Support";
     }, []);
@@ -27,7 +13,7 @@ const About = (props) => {
         <section className={classes.About}>
             <figure className={classes.About__Figure}>
                 <img
-                    src="https://scontent.xx.fbcdn.net/v/t1.0-9/61757485_2033346613628851_3954944708089741312_o.jpg?_nc_cat=111&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=r9bGr-Ih6JgAX9qyVuH&_nc_ht=scontent.xx&oh=597c1d01af4bcc5d04a79c628096dee9&oe=6087E63D"
+                    src="/imgs/sulogo.jpg"
                     alt="MTU Logo"
                     className={classes.About__Figure__Image}
                 />
@@ -48,7 +34,7 @@ const About = (props) => {
             <Heading text="strategies" />
             <Paragraph>MTU CDM Support Teamမှ လုပ်ဆောင်နေသည့် အစီအစဉ်များ</Paragraph>
             <div className={classes.About__List}>
-                {items.current.map((item, i) => (
+                {aboutData.items.map((item, i) => (
                     <div className={classes.About__List__Item} key={i}>
                         <ion-icon
                             className={classes.About__List__Icon}

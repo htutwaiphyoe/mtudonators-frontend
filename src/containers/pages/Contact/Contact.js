@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 
-import icon from "../../../assets/imgs/contact.svg";
 import Paragraph from "../../../components/shared/Paragraph/Paragraph";
 import Form from "../../../components/shared/Form/Form";
 import firebase from "../../../api/firebase";
@@ -124,7 +123,7 @@ const Contact = (props) => {
             <div className={classes.Contact__Container}>
                 <figure className={classes.Contact__ImageContainer}>
                     <img
-                        src={icon}
+                        src="/imgs/contact.svg"
                         alt="Contact Icon"
                         className={classes.Contact__ImageContainer__Image}
                     />
