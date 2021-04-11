@@ -13,8 +13,6 @@ const DonationDetail = (props) => {
         document.title = "Donation | MTU CDM Support";
     }, []);
 
-    return <section className={classes.DonationDetail}>
-        
-    </section>;
+    return <section className={classes.DonationDetail}></section>;
 };
 export default DonationDetail;

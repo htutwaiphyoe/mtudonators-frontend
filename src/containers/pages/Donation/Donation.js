@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+// import { useLocation, useHistory } from "react-router-dom";
 
 import Paragraph from "../../../components/shared/Paragraph/Paragraph";
 import Button from "../../../components/shared/Button/Button";
@@ -7,33 +7,35 @@ import Box from "../../../components/shared/Box/Box";
 import * as donationData from "../../../api/donationData";
 import classes from "./Donation.module.scss";
 const Donation = (props) => {
-    const location = useLocation();
-    const history = useHistory();
+    // const location = useLocation();
+    // const history = useHistory();
 
     useEffect(() => {
         document.title = "Donation | MTU CDM Support";
     }, []);
-    const onButtonClick = (e, month) => {
-        e.preventDefault();
-        history.push(`${location.pathname}/${month}`);
-    };
+    // const onButtonClick = (e, month) => {
+    //     e.preventDefault();
+    //     history.push(`${location.pathname}/${month}`);
+    // };
     return (
         <section className={classes.Donation}>
-            <Paragraph>လှူဒါန်းမှုများကို လစဉ်ထောက်ပံပေးလျက်ရှိပါသည်</Paragraph>
+            <Paragraph>လှူဒါန်းမှုများကို လစဉ်ထောက်ပံ့ပေးလျက်ရှိပါသည်</Paragraph>
             <div className={classes.Donation__PhotoBox}>
                 {donationData.cards.map((c, i) => (
-                    <div className={classes.Donation__Card}>
+                    <div className={classes.Donation__Card} key={i}>
                         <figure>
                             <img
                                 className={classes.Donation__PhotoBox__Photo}
                                 src={c.image}
                                 alt={`${c.month} donations`}
+                                loading="lazy"
                             />
                         </figure>
                         <Paragraph>{c.month} လအတွက် ထောက်ပံ့မှုများ</Paragraph>
-                        <Button valid={true} onClick={(e) => onButtonClick(e, c.month)}>
+                        <Paragraph>{c.description}</Paragraph>
+                        {/* <Button valid={true} onClick={(e) => onButtonClick(e, c.month)}>
                             Read detail
-                        </Button>
+                        </Button> */}
                     </div>
                 ))}
             </div>
@@ -58,6 +60,7 @@ const Donation = (props) => {
                                 src={el.src}
                                 alt={el.caption}
                                 className={classes.Donation__ImageContainer__Image}
+                                loading="lazy"
                             />
                             <Paragraph>{el.caption}</Paragraph>
                         </figure>
@@ -73,6 +76,7 @@ const Donation = (props) => {
                                 src={el.src}
                                 alt={el.caption}
                                 className={classes.Donation__ImageContainer__Image}
+                                loading="lazy"
                             />
                             <Paragraph>{el.caption}</Paragraph>
                         </figure>

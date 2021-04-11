@@ -126,6 +126,7 @@ const Contact = (props) => {
                         src="/imgs/contact.svg"
                         alt="Contact Icon"
                         className={classes.Contact__ImageContainer__Image}
+                        loading="lazy"
                     />
                 </figure>
                 <Button link={true} url="http://m.me/mtustudentunion">

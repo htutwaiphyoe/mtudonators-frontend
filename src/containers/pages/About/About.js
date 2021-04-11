@@ -16,6 +16,7 @@ const About = (props) => {
                     src="/imgs/sulogo.jpg"
                     alt="MTU Logo"
                     className={classes.About__Figure__Image}
+                    loading="lazy"
                 />
             </figure>
             <Heading text="about us" />

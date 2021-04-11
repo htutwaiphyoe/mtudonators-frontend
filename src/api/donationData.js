@@ -42,14 +42,18 @@ export const services = {
 
 export const cards = [
     {
-        month: "february",
+        month: "February",
         image:
             "https://scontent-sin6-2.xx.fbcdn.net/v/t1.6435-0/s640x640/164728492_2505865269710314_8984117300093244580_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=0debeb&_nc_ohc=Nt_LEGJNur8AX_KqxFq&_nc_ht=scontent-sin6-2.xx&tp=7&oh=5cfa162566c5e40497b2e6de115d90c2&oe=6092E009",
+        description:
+            "ဖေဖော်ဝါရီလအတွက် ပြည်သူ့လစာကို ကျောင်းဆေးခန်းရှိ ကျန်းမာရေးဝန်ထမ်းများမှအပ ကျန်ဝန်ထမ်းများ ရရှိပါသည်။ လစာမရရှိသောကျောင်းကျန်းမာရေးဝန်ထမ်း ၃ ဦးအား CDM Support Team မှ လစာအပြည့် စုစုပေါင်း ၅၄၀,၀၀၀ ကျပ်ကို မတ်လ ၂ ရက်နေ့ ညနေပိုင်းတွင် သွားရောက် ပေးအပ်ခဲ့ပါသည်။",
     },
 
     {
-        month: "march",
+        month: "March",
         image:
             "https://scontent-sin6-2.xx.fbcdn.net/v/t1.6435-9/167400206_2513465945616913_8531590648993454432_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=0debeb&_nc_ohc=9pSmOHlq4BIAX8x6iZ-&_nc_ht=scontent-sin6-2.xx&oh=0494e3bca1748adeef27188dd9a2c073&oe=6093A3DE",
+        description:
+            "MTU ရှိ CDM ပြည်သူ့ဝန်ထမ်းများအနက်မှ အမှုထမ်း ၁၄၄ ဦးအား တစ်ဦးလျှင် ၁ သိန်းကျပ်စီဖြင့် ၁၄၄ သိန်းအား ထောက်ပံ့ပေးအပ်ပြီးဖြစ်ပါသည်။ ကျန်ရှိသောပြည်သူ့ဝန်ထမ်းများကိုလည်း ဆက်လက် ဆက်သွယ်ထောက်ပံ့သွားမည်ဖြစ်ပါသည်။",
     },
 ];
