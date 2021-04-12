@@ -1,25 +1,20 @@
 import { useEffect } from "react";
-// import { useLocation, useHistory } from "react-router-dom";
 
 import Paragraph from "../../../components/shared/Paragraph/Paragraph";
+import Heading from "../../../components/shared/Heading/Heading";
 import Button from "../../../components/shared/Button/Button";
 import Box from "../../../components/shared/Box/Box";
 import * as donationData from "../../../api/donationData";
 import classes from "./Donation.module.scss";
 const Donation = (props) => {
-    // const location = useLocation();
-    // const history = useHistory();
-
     useEffect(() => {
         document.title = "Donation | MTU CDM Support";
     }, []);
-    // const onButtonClick = (e, month) => {
-    //     e.preventDefault();
-    //     history.push(`${location.pathname}/${month}`);
-    // };
+
     return (
         <section className={classes.Donation}>
-            <Paragraph>လှူဒါန်းမှုများကို လစဉ်ထောက်ပံ့ပေးလျက်ရှိပါသည်</Paragraph>
+            <Heading text="Supports" />
+            <Paragraph>လှူဒါန်းမှုများကို CDMဝန်ထမ်းများထံ လစဉ်ထောက်ပံ့ပေးလျက်ရှိပါသည်။</Paragraph>
             <div className={classes.Donation__PhotoBox}>
                 {donationData.cards.map((c, i) => (
                     <div className={classes.Donation__Card} key={i}>
@@ -40,16 +35,17 @@ const Donation = (props) => {
                 ))}
             </div>
             <Box vertical>
-                <Paragraph>
+                <Paragraph unmuted={true}>
                     CDM သမားများ ဆက်လက်ရပ်တည်နိုင်ရန်အတွက် ထောက်ပံ့လိုပါက MTU Student's Union ၏ Page
                     Messanger ကနေတစ်ဆင့် ဆက်သွယ်မေးမြန်းလှူဒါန်းနိုင်ပါသည်။
                 </Paragraph>
                 <Button link={true} url="http://m.me/mtustudentunion">
                     Support Now
+                    {/* <i className="fas fa-arrow-right" style={{ marginLeft: ".8rem" }}></i> */}
                 </Button>
             </Box>
             <Paragraph>
-                အောက်ဖော်ပြပါ service များဖြင့် လှူဒါန်းမှုကို ကောက်ခံလျက်ရှိပါသည်
+                အောက်ဖော်ပြပါ service များဖြင့် လှူဒါန်းမှုကို ကောက်ခံလျက်ရှိပါသည်။
             </Paragraph>
             <div className={classes.Donation__Container}>
                 <Paragraph>Mobile Payment များ</Paragraph>

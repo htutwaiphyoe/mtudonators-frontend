@@ -2,9 +2,10 @@ import React, { Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import Layout from "./Layout/Layout";
-import Home from "./pages/Home/Home";
+// import Home from "./pages/Home/Home";
 const About = React.lazy(() => import("./pages/About/About"));
 const Donation = React.lazy(() => import("./pages/Donation/Donation"));
+const Home = React.lazy(() => import("./pages/Home/Home"));
 // const DonationDetail = React.lazy(() => import("./pages/DonationDetail/DonationDetail"));
 const Contact = React.lazy(() => import("./pages/Contact/Contact"));
 const App = () => {
@@ -13,9 +14,9 @@ const App = () => {
             <Layout>
                 <Suspense fallback={null}>
                     <Switch>
-                        <Route path="/" exact component={Home} />
+                        <Route path="/" exact component={Donation} />
                         <Route path="/about" exact component={About} />
-                        <Route path="/donation" exact component={Donation} />
+                        <Route path="/donation" exact component={Home} />
                         {/* <Route path="/donation/:month" exact component={DonationDetail} /> */}
                         <Route path="/contact" exact component={Contact} />
                         <Redirect to="/" />

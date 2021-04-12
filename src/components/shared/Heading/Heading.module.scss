@@ -5,6 +5,7 @@
     color: $color-muted;
     text-transform: capitalize;
     position: relative;
+    text-align: center;
     &::after {
         content: "";
         width: 50%;

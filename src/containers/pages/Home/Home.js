@@ -16,7 +16,7 @@ const Home = (props) => {
         if (percentage < homeData.percentage) {
             timer2 = setTimeout(() => {
                 setPercentage((prevState) => prevState + 1);
-            }, 100);
+            }, 35);
         }
         return () => {
             clearTimeout(timer2);
