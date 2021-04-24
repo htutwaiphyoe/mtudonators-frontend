@@ -28,7 +28,7 @@ const Home = (props) => {
     return (
         <section className={classes.Home}>
             <div className={classes.Home__Total}>
-                <h1 className={classes.Home__Total__Heading}>K34,084,162+</h1>
+                <h1 className={classes.Home__Total__Heading}>K34,232,562+</h1>
                 <Paragraph>{`ရရှိထားပြီးဖြစ်သည်`}</Paragraph>
             </div>
             <div className={classes.Home__Container}>

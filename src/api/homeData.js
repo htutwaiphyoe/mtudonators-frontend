@@ -1,13 +1,13 @@
-export const total = 34_084_162,
+export const total = 34_232_562,
     supported = 19_400_000,
-    balance = 14_684_162,
+    balance = 14_832_562,
     percentage = (supported / total) * 100;
 
 export const charts = {
     bar: [
         {
-            labels: ["Mar31", "Apr1", "Apr5", "Apr6", "Apr7", "Apr11", "Apr16", "Apr20", "Apr21"],
-            data: [32_000, 35_000, 100_000, 5_000, 155_000, 20_000, 50_000, 30_000, 1_000_000],
+            labels: ["Apr1", "Apr5", "Apr6", "Apr7", "Apr11", "Apr16", "Apr20", "Apr21", "Apr24"],
+            data: [35_000, 100_000, 5_000, 155_000, 20_000, 50_000, 30_000, 1_000_000, 148_400],
             label: "ငွေပမာဏ",
             title: "နောက်ဆုံး ကောက်ခံရရှိမှု",
             bg: "#9d0208",
@@ -25,7 +25,7 @@ export const charts = {
                 1_230_000,
                 862_550,
                 1_786_000,
-                18_980_000,
+                19_128_400,
             ],
             label: "‌ငွေပမာဏ",
             title: "Batch အလိုက်နှင့် ပြင်ပမှ ကောက်ခံရရှိမှု",
@@ -42,7 +42,7 @@ export const charts = {
     },
 };
 export const donors = [
-    { name: "ပြင်ပအလှူရှင်များ", batch: "N/A", amount: "18,980,000" },
+    { name: "ပြင်ပအလှူရှင်များ", batch: "N/A", amount: "19,128,400" },
     { name: "1st batch ကျောင်းသားဟောင်းများ", batch: "1st", amount: "3,405,000" },
     { name: "Final ကျောင်းသားများ", batch: "3rd", amount: "1,883,000" },
     { name: "ဂျပန်နှင့်နော်ဝေရောက် MTU ကျောင်းသားများ", batch: "N/A", amount: "1,786,000" },
