@@ -1,13 +1,13 @@
-export const total = 34_857_562,
+export const total = 34_925_562,
     supported = 19_700_000,
-    balance = 15_157_562,
+    balance = 15_225_562,
     percentage = (supported / total) * 100;
 
 export const charts = {
     bar: [
         {
-            labels: ["Apr5", "Apr6", "Apr7", "Apr11", "Apr16", "Apr20", "Apr21", "Apr24", "Apr26"],
-            data: [100_000, 5_000, 155_000, 20_000, 50_000, 30_000, 1_000_000, 148_400, 625_000],
+            labels: ["Apr6", "Apr7", "Apr11", "Apr16", "Apr20", "Apr21", "Apr24", "Apr26", "Apr28"],
+            data: [5_000, 155_000, 20_000, 50_000, 30_000, 1_000_000, 148_400, 625_000, 68_000],
             label: "ငွေပမာဏ",
             title: "နောက်ဆုံး ကောက်ခံရရှိမှု",
             bg: "#9d0208",
@@ -22,7 +22,7 @@ export const charts = {
                 1_469_200,
                 1_680_800,
                 1_445_612,
-                1_230_000,
+                1_268_000,
                 862_550,
                 1_786_000,
                 19_628_400,
@@ -50,6 +50,6 @@ export const donors = [
     { name: "5th year ကျောင်းသားများ", batch: "4th", amount: "1,469,200" },
     { name: "2nd batch ကျောင်းသားဟောင်းများ", batch: "2nd", amount: "1,467,000" },
     { name: "3rd year ကျောင်းသားများ", batch: "6th", amount: "1,445,612" },
-    { name: "2nd year ကျောင်းသားများ", batch: "7th", amount: "1,230,000" },
+    { name: "2nd year ကျောင်းသားများ", batch: "7th", amount: "1,298,000" },
     { name: "1st year ကျောင်းသားများ", batch: "8th", amount: "862,550" },
 ];
